@@ -15,8 +15,9 @@ switch ($path) {
     case $path === "/tpsecu/active":
         include './controller/ctrl_active_compte.php';
         break;
-
-
+    case $path === "/tpsecu/addEvent":
+        include './controller/ctrl_add_event.php';
+        break;
     default:
         include './controller/ctrl_home.php';
         break;
