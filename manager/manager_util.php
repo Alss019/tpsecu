@@ -68,7 +68,7 @@ class ManagerUtil extends Utilisateur
         $mail = new PHPMailer(true);
         try {
             //Server settings
-            $mail->SMTPDebug = SMTP::DEBUG_SERVER;
+            $mail->SMTPDebug = 0;
             $mail->isSMTP();
             $mail->Host       = 'smtp.office365.com';
             $mail->SMTPAuth   = true;

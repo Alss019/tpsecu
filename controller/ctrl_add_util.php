@@ -7,7 +7,7 @@ include './view/view_add_util.php';
 
 $message = "";
 //test si le bouton submit est cliqué
-if (isset($_POST['createUser'])) {
+if (isset($_POST['createUtil'])) {
     //test si tous les champs sont remplis
     if (
         $_POST['name_util'] != "" and $_POST['first_name_util'] != "" and
@@ -87,4 +87,40 @@ if (isset($_POST['createUser'])) {
 else {
     $message = "Veuillez compléter le formulaire et cliquer sur ajouter";
 }
-echo $message;
+echo '<p style="grid-column:1; text-align:center;">' . $message . '</p>';
+
+if (isset($_POST['connect'])) {
+    if ($_POST['mail_util'] != "" && $_POST['pwd_util'] != "") {
+
+        $pwd_util = cleanInput($_POST['pwd_util']);
+        $mail_util = cleanInput($_POST['mail_util']);
+
+        $util = new ManagerUtil(null, null, $mail_util, $pwd_util, null, null, null);
+
+        $compte = $util->getUtilByMail($bdd);
+        // on verifie si il y a un compte ayant ce mail en BDD 
+        if ($compte != null) {
+            // on peut passer à la verification du mot de 
+            $hash = $compte[0]['pwd_util'];
+            //vérifie si le mot de passe correspond
+            $password = password_verify($pwd_util, $hash);
+
+            if ($password) {
+                // les mots de passe correspondent
+                // on initialise les varibles de session
+                $_SESSION['connected'] = true;
+                $_SESSION['id'] = $compte[0]['id_util'];
+                $_SESSION['name'] = $compte[0]['name_util'];
+                $_SESSION['first'] = $compte[0]['first_name_util'];
+                $_SESSION['mail'] = $compte[0]['mail_util'];
+                $_SESSION['roles'] = $compte[0]['id_role'];
+                // on redirige vers la page d'accueil
+                $message = "Connexion réussi";
+                redirection("/tpsecu/", "1000");
+            } else {
+                $message = "Erreur de connexion";
+            }
+        }
+    }
+}
+echo '<p style="grid-column:2;text-align:center;">' . $message . '</p>';
