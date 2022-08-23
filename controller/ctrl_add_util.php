@@ -84,9 +84,6 @@ if (isset($_POST['createUtil'])) {
     }
 }
 //test non cliqué
-else {
-    $message = "Veuillez compléter le formulaire et cliquer sur ajouter";
-}
 echo '<p style="grid-column:1; text-align:center;">' . $message . '</p>';
 
 if (isset($_POST['connect'])) {
@@ -120,6 +117,8 @@ if (isset($_POST['connect'])) {
             } else {
                 $message = "Erreur de connexion";
             }
+        } else {
+            $message = "Le compte existe pas";
         }
     }
 }
