@@ -1,5 +1,6 @@
 <?php
 include './utils/fonction.php';
+include './view/header.php';
 
 
 session_start();
@@ -17,6 +18,9 @@ switch ($path) {
         break;
     case $path === "/tpsecu/addEvent":
         include './controller/ctrl_add_event.php';
+        break;
+    case $path === "/tpsecu/showEvent":
+        include './controller/ctrl_show_event.php';
         break;
     default:
         include './controller/ctrl_home.php';
