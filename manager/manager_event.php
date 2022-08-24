@@ -25,7 +25,7 @@ class ManagerEvenement extends Evenement
     {
         try {
             $req = $bdd->prepare('SELECT id_event, nom_event, 
-                desc_event FROM evenement');
+                desc_event, date_event FROM evenement');
             $req->execute();
             $data = $req->fetchAll(PDO::FETCH_OBJ);
             return $data;

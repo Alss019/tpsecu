@@ -1,14 +1,31 @@
 body {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
     margin: 0;
     padding: 0;
     font-family: quicksand;
 }
 
-.add {
-    grid-column: 1;
+nav {
+    display: flex;
+    justify-content: space-around;
+    margin: 40px 0 70px 0;
 }
+
+nav a {
+    font-size: 20px;
+    text-decoration: none;
+    transition: font-size 1s;
+}
+
+nav a:hover {
+    cursor: pointer;
+    font-size: 25px;
+}
+
+nav a:visited {
+    color: #000;
+}
+
+.add {}
 
 .add h3 {
     text-align: center;
@@ -23,11 +40,10 @@ body {
 .add p {
     text-align: center;
     margin: 20px;
-
 }
 
 #input {
-    width: 250px;
+    width: 350px;
     border-top: none;
     border-left: none;
     border-right: none;
@@ -38,7 +54,7 @@ body {
 .add textarea {
     height: 150px;
     border: 2px solid #000;
-    width: 250px;
+    width: 350px;
     font-size: 15px;
     border-radius: 5px;
 }

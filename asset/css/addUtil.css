@@ -6,6 +6,28 @@ body {
     font-family: quicksand;
 }
 
+nav {
+    grid-column: 1/ span 2;
+    display: flex;
+    justify-content: space-around;
+    margin: 40px 0 70px 0;
+}
+
+nav a {
+    font-size: 20px;
+    text-decoration: none;
+    transition: font-size 1s;
+}
+
+nav a:hover {
+    cursor: pointer;
+    font-size: 25px;
+}
+
+nav a:visited {
+    color: #000;
+}
+
 .add {
     grid-column: 1;
 }

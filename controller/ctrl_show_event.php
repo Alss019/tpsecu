@@ -10,12 +10,12 @@ $liste = $event->showAllEvent($bdd);
 //boucle pour afficher la liste des articles (avec le nom et le prix)
 foreach ($liste as $value) {
 
-    echo '<li>
-            <span>' . $value->nom_event . '</span>
-            <span>' . $value->desc_event . '</span>
-            <span>' . $value->date_event . '</span>
-        </li>';
+        echo '<tr class="row">
+                <td>' . $value->nom_event . '</td>
+                <td>' . $value->desc_event . '</td>
+                <td>' . $value->date_event .  '</td>
+            </tr>';
 }
-echo   '</ul>
-        </body>
-        </html>';
+echo '</table>
+            </div>
+        </main>';

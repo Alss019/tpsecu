@@ -32,9 +32,9 @@
     <div class="connex">
         <h3>Connexion</h3>
         <form action="" method="post">
-            <!-- <p>Saisir un email :</p> -->
+
             <p><input type="mail" name="mail_util" id="input" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" placeholder="Email"></p>
-            <!-- <p>Saisir un mot de passe :</p> -->
+
             <p><input type="password" name="pwd_util" id="input" pattern="(?=.*\d)(?=.*[a-z0-9])(?=.*[A-Z]).{6,}" placeholder="Mot de passe"></p>
             <p><input type="submit" value="Connexion" name="connect"></p>
         </form>
